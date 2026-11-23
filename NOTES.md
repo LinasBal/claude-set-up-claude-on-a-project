@@ -19,7 +19,3 @@ Without the deny rules, Claude could read `.env` and pull real secrets into the 
 - `/memory` shows the project `CLAUDE.md` as loaded.
 - `/permissions` shows the allow, ask and deny rules above.
 - I asked "How do I run the tests here?" and Claude answered from `CLAUDE.md`.
-
-## .gitignore fix
-
-The `.gitignore` entries had leading spaces, so `.env` and `.claude/settings.local.json` weren't actually ignored. I removed the spaces and confirmed with `git check-ignore`.
