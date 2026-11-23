@@ -23,6 +23,7 @@ CI runs lint then tests on Node 22. Both must pass; don't use features newer tha
 
 ## Architecture
 
+- `routes/` has one file per resource (`users.js`, `health.js`); `server.js` mounts each at `/users` and `/health`.
 - `server.js` exports `app` and only calls `listen()` when run directly, so tests import it without opening a port.
 - `db/store.js` holds data in module-level arrays that reset on restart. Tests share this state, so a test that creates users affects later tests.
 - Nothing loads `.env` automatically; `PORT` must come from the real environment.
